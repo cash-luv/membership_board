@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<footer>
 <div id="footer">
 
 </div>
+</footer>
 <script>
     const date = new Date();
     console.log(date);

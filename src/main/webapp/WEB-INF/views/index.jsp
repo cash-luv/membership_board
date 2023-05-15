@@ -11,10 +11,12 @@
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="/resources/css/skills.css">
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 <%@include file="./component/header.jsp"%>
-<%@include file="./component/LoginNav.jsp"%>
+<%@include file="./component/nav.jsp"%>
 
 <section class="skills" id="skills">
     <div class="max-width">

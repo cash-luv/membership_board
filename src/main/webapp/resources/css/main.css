@@ -4,18 +4,22 @@
 }
 
 #header {
+    height: 10%;
     background-color: #3157d2;
     text-align: center;
     padding: 20px;
 }
 
 #nav {
+
     background-color: #8c89e7;
 }
 
 #section {
+    overflow: scroll;
     background-color: #e4e4e4;
-    /*padding: 20px;*/
+    height: 80%;
+    padding: 20px;
 }
 
 #section h2 {
@@ -27,7 +31,7 @@
 }
 
 #footer {
-
+    height: 10%;
     background-color: #3157d2;
     text-align: center;
     padding: 20px;
@@ -58,25 +62,223 @@
     justify-content: center;
 }
 
-/*#section table tr,th,td {*/
-/*    padding: 5px;*/
-/*    border: 1px solid black;*/
-/*}*/
+#section table tr,th,td {
+    padding: 5px;
+    border: 1px solid black;
+}
 
-/*input {*/
-/*    display: block;*/
-/*    text-align: center;*/
-/*}*/
+input {
+    display: block;
+    text-align: center;
+}
 .container{
     /*display: flex;*/
     /*justify-content: center;*/
-    text-align: center;
+    /*text-align: center;*/
     /*margin: auto;*/
 
 }
+#section form {
+    text-align: center;
+}
+
+#section form input {
+    display: block;
+    margin: 0 auto;
+}
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.board-table th,
+.board-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.board-table th {
+    background-color: #eee;
+    text-align: center;
+    font-weight: bold;
+}
+
+.board-table img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 기본 테이블 스타일 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* 글제목과 작성자 스타일 */
+td.title, td.writer {
+    width: 50%;
+}
+
+td.title {
+    font-weight: bold;
+}
+td.writer {
+    font-weight: bold;
+}
+
+/*/* 글내용 스타일 */
+td.contents {
+    font-size: 1.2em;
+    /*text-align: center;*/
+}
+
+/* 조회수와 작성일 스타일 */
+td.hits, td.date {
+    font-size: 0.8em;
+    text-align: right;
+}
+td.hits {
+    font-weight: bold;
+}
+td[id="board-contents"] {
+    font-size: 1.2em;
+}
+td[id="board-contents"] img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 첨부파일 이미지 스타일 */
+img {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+}
+
+/* id, 조회수, 작성일 스타일 */
+.board-table th:first-child,
+.board-table td:first-child,
+.board-table th:nth-child(3),
+.board-table td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+/* 글제목과 내용 스타일 */
+.board-table th:nth-child(2),
+.board-table td:nth-child(2),
+.board-table th:nth-child(4),
+.board-table td:nth-child(4) {
+    width: 80%;
+}
+
+/* 글내용을 크게 스타일 */
+.board-table td:last-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+ /*첨부파일 이미지와 id 스타일 */
+.board-table th:first-child img,
+.board-table td:first-child img {
+    float: left;
+    margin-right: 1rem;
+}
 
 
+/* 호섭이 css */
+/**{*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*}*/
+/*html{*/
+/*    height: 100vh;*/
+/*}*/
+/*body{*/
+/*    height: 100vh;*/
+/*}*/
+/*header{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    height: 10%;*/
+/*    width: 100%;*/
+/*    background-color: yellow;*/
 
+/*}*/
+/*header h2 {*/
+/*    padding-top: 28px;*/
+/*}*/
+/*td {*/
+/*    box-sizing: border-box;*/
+/*    width: 50%;*/
+/*}*/
+/*nav{*/
+/*    height: 5vb;*/
+/*    width: 100%;*/
+/*    background-color: violet;*/
+/*}*/
+/*nav ul {*/
+/*    list-style-type: none;*/
+/*    overflow: hidden;*/
+/*}*/
+/*nav ul li {*/
+/*    float: left;*/
+/*}*/
+/*nav ul li a {*/
+/*    display: inline-block;*/
+/*    padding: 13px;*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*}*/
+/*nav ul li a:hover {*/
+/*    color: white;*/
+/*    background-color: cadetblue;*/
+/*}*/
+/*section {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    height: 80vh;*/
+/*    width: 100%;*/
+/*    background: khaki;*/
+/*    overflow-y: scroll;*/
+/*}*/
+
+/*footer{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    height: 5vh;*/
+/*    width: 100%;*/
+/*    background-color: violet;*/
+/*}*/
+/*footer div{*/
+/*    padding-top: 12px;*/
+/*}*/
+/*table {*/
+/*    margin: auto;*/
+/*    border: 1px solid black;*/
+/*}*/
+/*table tr th {*/
+/*    border: 1px solid black;*/
+/*}*/
 
 
 

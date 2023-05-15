@@ -10,10 +10,12 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 <body>
 <%@include file="../component/header.jsp" %>
 <%@include file="../component/nav.jsp" %>
+
 <section id="section">
     <h2>회원등록 페이지</h2>
     <br>
@@ -23,7 +25,10 @@
                 <tr>
                     <th><label for="memberEmail"><b>이메일</b> </label></th>
                     <th><input type="text" name="memberEmail" id="memberEmail" placeholder="이메일을 입력해주세요"
-                               onblur="email_check()"></th>
+                               onblur="email_check()">
+                        <p id="check-result"></p></th>
+
+
                 </tr>
                 <tr>
                     <th><label for="memberPassword"><b>비밀번호</b> </label></th>
@@ -38,8 +43,8 @@
                     <th><input type="text" name="memberMobile" id="memberMobile" placeholder="전화번호를 입력해주세요"></th>
                 </tr>
                 <tr>
-                    <th><label for="memberProfile"><b>프로필사진</b></label></th>
-                    <th><input type="file" name="memberProfile" id="memberProfile" multiple></th>
+                    <th><label for="Profile"><b>프로필사진</b></label></th>
+                    <th><input type="file" name="Profile" id="Profile" multiple></th>
                 </tr>
                 <tr>
                     <th><input type="submit" value="등록"></th>
@@ -57,7 +62,6 @@
         const Email = document.getElementById("memberEmail");
         const Password = document.getElementById("memberPassword");
         const Name = document.getElementById("memberName");
-        const Birth = document.getElementById("memberBirth");
         const Mobile = document.getElementById("memberMobile");
         const exp1 = /^(?=.*[a-z])(?=.*\d)(?=.*[!#$%])[a-z\d!#$%]{8,16}$/;
 
@@ -65,7 +69,7 @@
             Email.focus();
             alert("이메일이 입력되지 않았습니다")
             return false;
-        } else if (Password.value == "") {
+        } else if (Password.value.length == 0) {
             alert("비밀번호를 입력하세요")
             Password.focus();
             return false;
@@ -73,11 +77,11 @@
             alert("올바른 형식이 아닙니다")
             Password.focus();
             return false;
-        } else if (Name.value == "") {
+        } else if (Name.value.length == 0) {
             alert("이름을 제대로 입력해주세요")
             Name.focus();
             return false;
-        } else if (Mobile.value == "") {
+        } else if (Mobile.value.length == 0) {
             alert("전화번호를 입력해주세요")
             Mobile.focus();
             return false;
@@ -90,8 +94,9 @@
         location.href = "/";
 
     }
+
     const email_check = () => {
-        const email = document.getElementById("member-email").value;
+        const email = document.getElementById("memberEmail").value;
         const result = document.getElementById("check-result");
         $.ajax({
             url: "/email-check",

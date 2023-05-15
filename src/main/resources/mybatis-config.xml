@@ -3,6 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-<!--        <typeAlias type="com.codingrecipe.ex.dto.PostDTO" alias="post" />-->
+        <typeAlias type="com.icia.membership_board.dto.MemberDTO" alias="Member"></typeAlias>
+        <typeAlias type="com.icia.membership_board.dto.MemberFileDTO" alias="Profile"></typeAlias>
+        <typeAlias type="com.icia.membership_board.dto.BoardDTO" alias="Board"></typeAlias>
+        <typeAlias type="com.icia.membership_board.dto.BoardFileDTO" alias="boardFile"></typeAlias>
+        <typeAlias type="com.icia.membership_board.dto.CommentDTO" alias="Comment"></typeAlias>
     </typeAliases>
 </configuration>

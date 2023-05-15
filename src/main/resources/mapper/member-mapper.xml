@@ -3,7 +3,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="member">
+<mapper namespace="Member">
+    <insert id="Save" parameterType="Member" useGeneratedKeys="true" keyProperty="id">
+        insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberProfile)
+        values (#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberProfile})
+    </insert>
+
+    <insert id="saveFile" parameterType="Profile">
+        insert into member_profile_file_table(fileName,filePath,memberId)
+        values (#{fileName},#{filePath},#{memberId})
+    </insert>
+
+    <select id="findByMemberEmail" parameterType="String" resultType="member">
+        select * from  member_table where memberEmail = #{memberEmail}
+    </select>
+
+    <select id="login" parameterType="Member" resultType="Member">
+        select * from member_table where memberEmail=#{memberEmail} and memberPassword=#{memberPassword}
+    </select>
+
+    <select id="findAll" resultType="Member">
+        select  * from member_table
+    </select>
+
+    <delete id="delete" parameterType="Long">
+        delete from member_table where  id=#{id}
+    </delete>
+
+    <select id="findByMemberPassword" parameterType="String" resultType="Member">
+        select * from  member_table where memberPassword = #{memberPassword}
+    </select>
+
+    <update id="update" parameterType="Member">
+        update member_table set memberName=#{memberName},memberPassword=#{memberPassword}, memberMobile=#{memberMobile} where id=#{id}
+    </update>
 
 </mapper>
 
